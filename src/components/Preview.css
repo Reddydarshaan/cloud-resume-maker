@@ -1,0 +1,81 @@
+/* Preview.css */
+
+.resume-preview-container {
+  background: white;
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 50px;
+  border-radius: 12px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Header */
+.resume-header {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.resume-header h1 {
+  color: #5a3ca7;
+  font-size: 32px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-bottom: 8px;
+}
+
+.resume-header p {
+  font-size: 14px;
+  color: #555;
+  margin: 3px 0;
+}
+
+/* Section Headings */
+section {
+  margin-top: 25px;
+}
+
+section h2 {
+  color: #5a3ca7;
+  font-size: 18px;
+  border-bottom: 2px solid #e4d9ff;
+  padding-bottom: 5px;
+  margin-bottom: 10px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+/* Paragraph Text */
+section p {
+  margin-bottom: 8px;
+  font-size: 15px;
+}
+
+/* Strong labels inside additional info */
+section p strong {
+  color: #4a2d8a;
+}
+
+/* Subtle shadow divider effect between sections */
+section + section {
+  border-top: 1px solid #f0f0f0;
+  padding-top: 20px;
+}
+
+/* Responsive Layout */
+@media (max-width: 768px) {
+  .resume-preview-container {
+    padding: 25px;
+  }
+
+  .resume-header h1 {
+    font-size: 26px;
+  }
+
+  section h2 {
+    font-size: 16px;
+  }
+}
