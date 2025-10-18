@@ -1,16 +1,18 @@
-import { Amplify } from 'aws-amplify';
-import outputs from './aws-exports';
-
-Amplify.configure(outputs);
-
 import React, { useState } from "react";
 import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
-import Login from "./components/Login";
-import Signup from "./components/Signup";
-import ResumeForm from "./components/ResumeForm";
-import TemplateSelector from "./components/TemplateSelector";
-import Preview from "./components/Preview";
-import Dashboard from "./components/Dashboard";
+import { Amplify } from "aws-amplify";
+
+// Import everything first
+import outputs from "./aws-exports.js";
+import Login from "./components/Login.js";
+import Signup from "./components/Signup.js";
+import ResumeForm from "./components/ResumeForm.js";
+import TemplateSelector from "./components/TemplateSelector.js";
+import Preview from "./components/Preview.js";
+import Dashboard from "./components/Dashboard.js";
+
+// ✅ Configure Amplify AFTER all imports
+Amplify.configure(outputs);
 
 
 function App() {

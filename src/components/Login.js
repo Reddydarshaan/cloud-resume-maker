@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { signIn, fetchAuthSession, getCurrentUser } from "aws-amplify/auth";
+import { signIn, fetchAuthSession, getCurrentUser, signOut } from "aws-amplify/auth";
 import "./Login.css";
 
 function Login() {
@@ -16,6 +16,17 @@ function Login() {
     setLoading(true);
 
     try {
+      // Sign out any existing user
+      try {
+        const existingUser = await getCurrentUser();
+        if (existingUser) {
+          console.log("Signing out existing user...");
+          await signOut();
+        }
+      } catch {
+        // No user is signed in
+      }
+
       console.log("Attempting sign-in...");
       const result = await signIn({ username: email, password });
       console.log("Sign-in result:", result);

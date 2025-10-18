@@ -22,7 +22,7 @@ function Dashboard({ resumes = [] }) {
     <div className="dashboard-container">
       {/* Header */}
       <div className="dashboard-header">
-        <h2 className="dashboard-title">Dashboard</h2>
+        <h2 className="dashboard-title">ResumeMaker Dashboard</h2>
         <button onClick={handleLogout} className="logout-btn">
           Logout
         </button>
@@ -31,7 +31,6 @@ function Dashboard({ resumes = [] }) {
       {/* Step 1: Template Selection */}
       {!selectedTemplate && (
         <div className="template-section">
-          <h3 className="template-title">Select a Template</h3>
           <TemplateSelector onSelect={(template) => setSelectedTemplate(template)} />
         </div>
       )}

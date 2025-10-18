@@ -1,30 +1,37 @@
 /* Overall container */
 .dashboard-container {
-  background-color: #f7f9fc;
+  background-color: #f8fafc;
   min-height: 100vh;
   padding: 40px 60px;
-  font-family: "Inter", sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 /* Header section */
 .dashboard-header {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  margin-bottom: 40px;
-  background: #ffffff;
-  padding: 15px 25px;
-  border-radius: 12px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  margin-bottom: 50px;
+  background: linear-gradient(90deg, #2563eb, #3b82f6);
+  padding: 20px;
+  border-radius: 14px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  position: relative;
 }
 
 .dashboard-title {
-  font-size: 1.8rem;
+  font-size: 2rem;
   font-weight: 700;
-  color: #2d3748;
+  color: #ffffff;
+  letter-spacing: 1px;
+  text-align: center;
+  text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+  font-family: "Trebuchet MS", "Poppins", sans-serif;
 }
 
 .logout-btn {
+  position: absolute;
+  right: 25px;
   background-color: #ef4444;
   color: #fff;
   border: none;
@@ -37,21 +44,20 @@
 
 .logout-btn:hover {
   background-color: #dc2626;
+  transform: scale(1.05);
 }
 
-/* Template Selection Section */
+/* Template Section */
 .template-section {
   margin-bottom: 50px;
+  text-align: center;
 }
 
-.template-title {
-  font-size: 1.3rem;
-  font-weight: 600;
-  color: #1f2937;
-  margin-bottom: 15px;
+.template-section h3 {
+  display: none; /* Hide duplicate "Select a Template" text */
 }
 
-/* Form + Preview Layout (stacked vertically for clarity) */
+/* Form + Preview Layout */
 .form-preview-container-vertical {
   display: flex;
   flex-direction: column;
@@ -63,34 +69,40 @@
 /* Existing Resumes Section */
 .dashboard-resumes {
   margin-top: 60px;
+  text-align: center;
 }
 
 .resumes-title {
-  font-size: 1.5rem;
+  font-size: 1.6rem;
   font-weight: 700;
   color: #1f2937;
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 25px;
 }
 
+/* Centering the entire resumes content */
 .dashboard-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-  gap: 20px;
-  justify-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+  text-align: center;
 }
 
 .resume-card {
   background: white;
-  border-radius: 10px;
+  border-radius: 12px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
   padding: 20px;
-  width: 260px;
-  transition: transform 0.2s ease;
+  width: 270px;
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+  text-align: center;
 }
 
 .resume-card:hover {
-  transform: scale(1.03);
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.12);
 }
 
 .resume-name {
@@ -115,8 +127,19 @@
   font-size: 0.9rem;
   cursor: pointer;
   transition: all 0.2s ease;
+  margin: 0 auto;
+  display: inline-block;
 }
 
 .download-btn:hover {
   background-color: #2563eb;
+  transform: scale(1.05);
+}
+
+/* Empty message centered */
+.dashboard-grid p {
+  text-align: center;
+  width: 100%;
+  color: #6b7280;
+  font-size: 1rem;
 }
