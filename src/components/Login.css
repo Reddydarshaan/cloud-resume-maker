@@ -1,49 +1,186 @@
-.login-container {
+/* Background styling - Subtle blue gradient inspired by Resume-Now's clean, professional vibe */
+.login-page {
   min-height: 100vh;
+  background: linear-gradient(145deg, #e6f0fa, #d1e3ff); /* Soft sky blue to pale blue gradient for a fresh, professional look */
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  background: #f3f4f6;
+  justify-content: center;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif; /* Modern, clean font stack */
+  color: #333333; /* Dark gray text for high contrast */
+  overflow: hidden;
 }
 
-.login-form {
-  background: white;
-  padding: 30px;
-  border-radius: 15px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  width: 320px;
+/* Title above login box - Bold and prominent like Resume-Now's headings */
+.site-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  margin-bottom: 32px;
+  color: #1a1a1a; /* Near-black for strong contrast */
+}
+
+/* Login card container - Clean, elevated card like feature sections */
+.login-container {
+  background: #ffffff; /* White for crisp contrast against blue gradient */
+  border-radius: 12px;
+  padding: 40px 48px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* Subtle shadow for depth */
+  border: 1px solid #e9ecef; /* Light border for definition */
+  width: 380px;
+  max-width: 90%;
   text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+.login-container:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12); /* Gentle hover lift */
+}
+
+/* Form styling - Clean and structured */
 .login-form h2 {
-  margin-bottom: 20px;
-  color: #333;
+  margin-bottom: 28px;
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #1a1a1a;
 }
 
+/* Inputs - Neutral with clear focus states */
 .login-form input {
   width: 100%;
-  padding: 10px;
-  margin-bottom: 15px;
-  border: 1px solid #ccc;
+  padding: 14px 16px;
+  margin: 12px 0;
+  border: 1px solid #dee2e6; /* Light gray border */
   border-radius: 8px;
+  background: #ffffff;
+  color: #333333;
+  font-size: 1rem;
+  outline: none;
+  transition: all 0.2s ease;
 }
 
+.login-form input:focus {
+  border-color: #ff6200; /* Vibrant orange for focus to complement blue gradient */
+  box-shadow: 0 0 0 0.2rem rgba(255, 98, 0, 0.25); /* Subtle orange glow */
+}
+
+.login-form input::placeholder {
+  color: #6c757d; /* Muted gray for placeholders */
+  opacity: 1;
+}
+
+/* Buttons - Prominent and visible, contrasting with blue gradient */
 .login-form button {
-  background: #2563eb;
-  color: white;
-  border: none;
-  padding: 10px;
   width: 100%;
+  padding: 14px;
+  background: #ff6200; /* Vibrant orange for high visibility against blue */
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 1rem;
+  border: none;
   border-radius: 8px;
   cursor: pointer;
+  margin-top: 16px;
+  transition: all 0.2s ease;
 }
 
 .login-form button:hover {
-  background: #1d4ed8;
+  background: #e55a00; /* Darker orange for hover */
+  color: #ffffff;
+  transform: scale(1.02);
+}
+
+.login-form button:focus {
+  outline: 2px solid #ffffff;
+  outline-offset: 2px;
+  box-shadow: 0 0 0 0.2rem rgba(255, 98, 0, 0.25);
+}
+
+/* Error message - Clear and noticeable */
+.error {
+  color: #dc3545;
+  font-size: 0.9rem;
+  margin: 8px 0;
+  background: #f8d7da; /* Light red background for emphasis */
+  padding: 8px;
+  border-radius: 4px;
+  border: 1px solid #f5c6cb;
+}
+
+/* Signup link - Highly visible, matching button color */
+.login-form p {
+  margin-top: 20px;
+  font-size: 0.9rem;
+  color: #6c757d;
 }
 
 .link {
-  color: #2563eb;
+  color: #ff6200; /* Orange to match button for consistency */
+  font-weight: 600;
   cursor: pointer;
-  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.link:hover {
+  color: #e55a00; /* Darker orange for hover */
+  text-decoration: underline;
+}
+
+/* Trust section - Inspired by Resume-Now's Trustpilot and company logos */
+.trust-section {
+  margin-top: 24px;
+  font-size: 0.85rem;
+  color: #6c757d;
+}
+
+.rating {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.company-logos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.company-logos img {
+  height: 30px;
+  opacity: 0.8;
+  transition: opacity 0.2s ease;
+}
+
+.company-logos img:hover {
+  opacity: 1;
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+  .login-container {
+    width: 95%;
+    padding: 32px 24px;
+  }
+
+  .site-title {
+    font-size: 2rem;
+  }
+
+  .login-form h2 {
+    font-size: 1.4rem;
+  }
+
+  .company-logos {
+    gap: 12px;
+  }
+
+  .company-logos img {
+    height: 25px;
+  }
 }

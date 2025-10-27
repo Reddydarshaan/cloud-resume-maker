@@ -58,47 +58,42 @@ function Login() {
   };
 
   return (
-    <div className="login-container">
-      <form onSubmit={handleLogin} className="login-form">
-        <h2>Login</h2>
+    <div className="login-page">
+      <h1 className="site-title">Resume Maker Website</h1>
+      <div className="login-container">
+        <form onSubmit={handleLogin} className="login-form">
+          <h2>Login</h2>
 
-        <input
-          type="email"
-          placeholder="Email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          required
-        />
+          <input
+            type="email"
+            placeholder="Email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            required
+          />
 
-        <input
-          type="password"
-          placeholder="Password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          required
-        />
+          <input
+            type="password"
+            placeholder="Password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            required
+          />
 
-        {error && <p className="error">{error}</p>}
+          {error && <p className="error">{error}</p>}
 
-        <button type="submit" disabled={loading}>
-          {loading ? "Logging in..." : "Login"}
-        </button>
+          <button type="submit" disabled={loading}>
+            {loading ? "Logging in..." : "Login"}
+          </button>
 
-        <button
-          type="button"
-          className="direct-dashboard-btn"
-          onClick={() => navigate("/dashboard")}
-        >
-          Go to Dashboard
-        </button>
-
-        <p>
-          Don’t have an account?{" "}
-          <span className="link" onClick={() => navigate("/signup")}>
-            Sign up
-          </span>
-        </p>
-      </form>
+          <p>
+            Don’t have an account?{" "}
+            <span className="link" onClick={() => navigate("/signup")}>
+              Sign up
+            </span>
+          </p>
+        </form>
+      </div>
     </div>
   );
 }
